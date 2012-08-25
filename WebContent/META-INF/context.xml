@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="">
+	<Environment name="logBasePath" override="false" type="java.lang.String" value="/opt/dev/eclipse/Tracker/logs/"/> 
+	<Environment name="logFileName" override="false" type="java.lang.String" value="tracker.log"/> 
+	<Resource name="jdbc/tracker" auth="Container" type="javax.sql.DataSource" driverClassName="com.mysql.jdbc.Driver" 
+		username="root" password="root" maxActive="100" maxIdle="20" maxWait="20000"
+		logAbandoned="true" removeAbandoned="true" removeAbandonedTimeout="1200"
+		url="jdbc:mysql://localhost:3306/Tracker" /> 
+</Context>      		

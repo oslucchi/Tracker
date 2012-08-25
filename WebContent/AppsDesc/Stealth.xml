@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application name="Stealth" LOB="Equity">
+	<MailTo address="dg.stealth-support@baml.com" display="DG STEALTH-SUPPORT" />
+	<IssueWorkflow>
+		<Create>
+			<Impact>
+				<Group name="User" groupId="cli">
+					<GroupItem name="Internal Users">
+						<GrpItmCheckBox desc="single" value="intSingle" severity="1" priority="0" default="yes" />
+						<GrpItmCheckBox desc="multi" value="intMulti" severity="2" priority="1" />
+					</GroupItem>
+					<GroupItem name="External clients">
+						<GrpItmCheckBox desc="single" value="extSingle" severity="1" priority="0" />
+						<GrpItmCheckBox desc="multi" value="extMulti" severity="2" priority="1" />
+					</GroupItem>
+				</Group>
+				<Group name="Market" groupId="mkt">
+					<GroupItem name="On Exchanges" subDesc="(TSE, OSE, TostNet, J-Net, OFX, X-Direct, PTS, AXP, SORT, MLXN)">
+						<GrpItmCheckBox desc="single flow" value="trhSingle" severity="3" priority="2" default="yes" />
+						<GrpItmCheckBox desc="multi flows" value="trhMulti" severity="4" priority="3" />
+					</GroupItem>
+					<GroupItem name="COB" subDesc="(RAM, Confirms, Oasys, SDI, GMI, XDB)">
+						<GrpItmCheckBox desc="single flow" value="cobSingle" severity="5" priority="4" />
+						<GrpItmCheckBox desc="multi flows" value="cobMulti" severity="6" priority="5" />
+					</GroupItem>
+				</Group>
+				<Group name="Loss" groupId="loss">
+					<GroupItem name="User Inconvenient">
+						<GrpItmCheckBox desc="" value="finIncon" severity="7" priority="6" default="yes" />
+					</GroupItem>
+					<GroupItem name="Financial">
+						<GrpItmCheckBox desc="potential" value="finPoten" severity="8" priority="7" />
+						<GrpItmCheckBox desc="hard" value="finHard" severity="9" priority="8" />
+					</GroupItem>
+				</Group>
+				<Group name="Outage" groupId="out" >
+					<GroupItem name="Functionality impaired" >
+						<GrpItmCheckBox desc="" value="impaired" severity="7" priority="6" default="yes" />
+					</GroupItem>
+					<GroupItem name="Service outage">
+						<GrpItmCheckBox desc="single flow" value="outSingle" severity="8" priority="7" />
+						<GrpItmCheckBox desc="multi flows" value="outMulti" severity="9" priority="8" />
+					</GroupItem>
+				</Group>
+				<Group name="Incident type" groupId="inc">
+					<GroupItem name="Slowness">
+						<GrpItmCheckBox desc="" value="slowness" severity="7" priority="6" default="yes" />
+					</GroupItem>
+					<GroupItem name="Bad data">
+						<GrpItmCheckBox desc="" value="baddata" severity="8" priority="7" />
+					</GroupItem>
+					<GroupItem name="Workflow problem">
+						<GrpItmCheckBox desc="" value="workflow" severity="8" priority="7" />
+					</GroupItem>
+					<GroupItem name="Outage">
+						<GrpItmCheckBox desc="" value="outage" severity="8" priority="7" />
+					</GroupItem>
+				</Group>
+			</Impact>
+			<IssueType>
+				<Severity sevLow="2" sevMed="4" sevHig="7" prioLow="3" prioMed="5" prioHig="8" priorityWA="0.6" severityWA="0.8" />
+				
+				<IssueDetails name="Issue type" groupId="type" ctrltype="radio" searchable="yes">
+					<IssueDesc name="New" id="new"/>
+					<IssueDesc name="FYI" id="fyi"/>
+					<IssueDesc name="Enh" id="enh"/>
+				</IssueDetails>
+
+				<IssueDetails name="New issue" groupId="newIssue" ctrltype="radio">
+					<IssueDesc name="Yes" id="yes"/>
+					<IssueDesc name="No" id="no"/>
+					<IssueAdditionalInfo name="jira" length="20" showIfOneOf="No" clearOnHide="true" />
+				</IssueDetails>
+
+				<IssueDetails name="Request origin" groupId="req" ctrltype="radio"  searchable="yes">
+					<IssueDesc name="TP" id="tp"/>
+					<IssueDesc name="Ext Cli" id="extCli"/>
+					<IssueDesc name="Trader" id="trader"/>
+					<IssueDesc name="Ops" id="ops"/>
+					<IssueAdditionalInfo name="origin" length="20" showIfOneOf="Ext Cli|Trader|Ops" clearOnHide="true" />
+				</IssueDetails>
+
+				<IssueDetails name="Resolution time" groupId="res" ctrltype="radio"  searchable="no">
+					<IssueDesc name="Normal" id="normal"/>
+					<IssueDesc name="EOD" id="eod"/>
+					<IssueDesc name="ASAP" id="asap"/>
+				</IssueDetails>
+
+				<IssueDetails name="Flow Type" groupId="flow" ctrltype="checkbox"  searchable="yes">
+					<IssueDesc name="DMA" id="dma"/>
+					<IssueDesc name="DSA" id="dsa"/>
+					<IssueDesc name="Fidessa" id="fid"/>
+					<IssueDesc name="PT Ag" id="pt"/>
+					<IssueDesc name="Prop" id="prop"/>
+				</IssueDetails>
+
+				<IssueDetails name="Location" groupId="loc" ctrltype="checkbox"  searchable="yes">
+					<IssueDesc name="JP" id="jp"/>
+					<IssueDesc name="AU" id="au"/>
+					<IssueDesc name="HK" id="hk"/>
+					<IssueDesc name="SG" id="sg"/>
+					<IssueDesc name="TW" id="tw"/>
+					<IssueDesc name="KR" id="kr"/>
+					<IssueDesc name="APR" id="apr"/>
+					<IssueDesc name="PacRim" id="pri"/>
+				</IssueDetails>
+			</IssueType>
+		</Create>
+	</IssueWorkflow>
+	<Manage>
+	</Manage>
+</Application>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="stealth" namespace="/" extends="TrackerMain">
+		<action name="stealthSubmitForm" class="applications.SubmitActionDataLoader">
+			<param name="appName">Stealth</param>
+			<result name="success">/pages/issueSubmit.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+			<result name="login">/pages/login.jsp</result>
+		</action>
+		<action name="stealthSubmitAction" class="applications.Stealth.Issues.Submit">
+			<result name="success">/pages/menu.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+			<result name="login">/pages/login.jsp</result>
+		</action>
+		<action name="stealthSearchForm" class="applications.SearchActionDataLoader">
+			<param name="appName">Stealth</param>
+			<result name="success">/pages/issueSearch.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+			<result name="login">/pages/login.jsp</result>
+		</action>
+		<action name="stealthSearchAction" class="applications.Stealth.Issues.Search">
+			<result name="success">/pages/issueList.jsp</result>
+			<result name="error">/pages/error.jsp</result>
+			<result name="login">/pages/login.jsp</result>
+		</action>
+	</package>
+</struts>

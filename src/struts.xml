@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="TrackerMain" namespace="/" extends="struts-default">
+
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="authCheckInt" class="tracker.login.AuthorizationInterceptor" />
+			<interceptor-stack name="authCheckStack">
+				<interceptor-ref name="authCheckInt" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="authCheckStack" />
+
+        <default-action-ref name="loginCheck" />
+
+		<global-results>
+			<result name="error" type="redirectAction">
+				<param name="namespace">/pages/login.jsp</param>
+			</result>
+		</global-results>
+		  		
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+
+		<action name="home" class="tracker.login.AuthorizationInterceptor">
+			<result name="error">/pages/error.jsp</result>
+			<result name="login">/pages/login.jsp</result>
+			<result name="success">/pages/menu.jsp</result>
+		</action>
+
+		<action name="loginCheck" class="tracker.login.LoginCheck">
+			<result name="success">/pages/menu.jsp</result>
+			<result name="error">/pages/login.jsp</result>
+			<result name="login">/pages/login.jsp</result>
+		</action>
+
+		<action name="logOff" class="tracker.login.Logout">
+			<result name="success">/pages/login.jsp</result>
+		</action>
+	</package>				
+	<include file="apps-ext/struts-stealth.xml"></include>		
+</struts>

@@ -1,0 +1,84 @@
+/*
+ * NATIVE TAGS
+form br { // Set to display non as Struts css_xhtml renders one in the middle of the form! 
+    display: none;
+}
+ */
+
+BODY {
+	margin: 5px;
+	font-family: verdana, sans-serif; 
+	font-size: 12px; 
+}
+
+DIV.logo
+{
+	width: 420px;
+	height: 175px;
+	border-style: none;
+	border-width: 1px;
+	border-color: red;
+}
+DIV.search
+{
+	width: auto;
+	height: 175px;
+	border-style: none;
+	border-width: 1px;
+	border-color: red;
+}
+DIV.menu
+{
+	width: 220px;
+	height: auto;
+	border-style: none;
+	border-width: 1px;
+	border-color: red;
+}
+DIV.app
+{
+	width: auto;
+	height: auto;
+	border-style: none;
+	border-width: 1px;
+	border-color: red;
+}
+
+table.impact
+{
+	border-style: solid;
+	border-color: black;
+	border-width: 1pt;
+	border-collapse: collapse;
+	vertical-align: middle;
+	margin: 0;
+    padding: 0;
+}
+
+td.impactGroupTitle
+{
+	mso-ignore: colspan;
+	border-bottom: 1pt solid black;
+	font-weight: bold;
+	padding: 0;
+}
+
+td.impactItemRow
+{
+	border-bottom: 1pt solid black;
+	padding: 0;
+}
+
+td.impactItemRowSingle
+{
+	border-bottom: 1pt solid black;
+	border-top: medium none;
+	padding: 0;
+}
+
+td.impactItemSelect
+{
+	border-left: 1pt solid black;
+	border-bottom: 1pt solid black;
+	padding: 0;
+}

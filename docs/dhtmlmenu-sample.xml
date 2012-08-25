@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<menu>
+	<item id='mnu-2' text='Admin'>
+		<tooltip><![CDATA[Administrative functions]]></tooltip>
+		<item id='mnu-4' text='New application' img='new.gif'>
+			<href><![CDATA[adminNewApp.action]]></href>
+			<tooltip><![CDATA[Submit XML for a new application to include in Tracker]]></tooltip>
+		</item>
+		<item id='mnu-5' text='User configuration' img='open.gif'>
+			<href><![CDATA[adminConfigUser.action]]></href>
+			<tooltip><![CDATA[Update existing users profile]]></tooltip>
+		</item>
+	</item>
+	<item id='mnu-3' text='Support'>
+		<tooltip><![CDATA[Access application support]]></tooltip>
+		<item id='mnu-6' text='Equity'>
+			<tooltip><![CDATA[Equity technology (HTT, ELT)]]></tooltip>
+			<item id='mnu-7' text='Stealth' img='file.gif'>
+				<tooltip><![CDATA[Stealth]]></tooltip>
+				<item id='mnu-15' text='Submit issue' img='page_setup.gif'>
+				<href><![CDATA[stealthSubmit.action]]></href>
+				<tooltip><![CDATA[Submit a new issue]]></tooltip>
+			</item>
+		</item>
+		<item id='mnu-9' text='MOE' img='file.gif'>
+			<tooltip><![CDATA[MOE]]></tooltip>
+		</item>
+	</item>
+		<item id='mnu-10' text='ETT'>
+			<tooltip><![CDATA[Electronic Trading]]></tooltip>
+			<item id='mnu-11' text='MLXN' img='file.gif'>
+				<href><![CDATA[supportMLXN.action]]></href>
+				<tooltip><![CDATA[Merrill Lynch Crossing Engine]]></tooltip>
+			</item>
+			<item id='mnu-12' text='SORT' img='file.gif'>
+				<href><![CDATA[supportSORT.action]]></href>
+				<tooltip><![CDATA[Smart Order Router]]></tooltip>
+			</item>
+			<item id='mnu-13' text='AXP' img='file.gif'>
+				<href><![CDATA[supportAXP.action]]></href>
+				<tooltip><![CDATA[Sa Dio se l\'e\']]></tooltip>
+			</item>
+		</item>
+	</item>
+	<item id='mnu-14' text='Logout'>
+		<href><![CDATA[logOff.action]]></href>
+		<tooltip><![CDATA[Logoff from App]]></tooltip>
+	</item>
+</menu>
